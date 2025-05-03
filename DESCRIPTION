@@ -1,16 +1,18 @@
 Package: cvscores
 Type: Package
-Title: What the Package Does (Title Case)
+Title: This package calculates famous scores in cardiovascular medicine (CV Scores)
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Rafik", "Margaryan",
+      email = "raffdoc@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: This must be able to calculate given data to calculare cardiovascular scores. 
+License: MIT
 Encoding: UTF-8
 LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
