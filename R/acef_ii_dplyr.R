@@ -1,6 +1,7 @@
 #' ACEF II Score Calculation with dplyr environment
 #' @description This function calculates the ACEF II score based on age, creatinine, and ejection fraction, emerjency state of surger and hematocrit valus if inferor to 36 using dplyr.
 #' @param data A data frame containing the columns: age, creatinine, and ejection_fraction, emerjency_operation, hct.
+#' @name acef_ii_dplyr
 #' @param ... Additional arguments passed to dplyr functions.
 #' @return A data frame with an additional column for ACEF score.
 
