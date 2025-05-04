@@ -25,5 +25,5 @@ acef = function(data, ...) {
   data |> mutate(
     acef = age/ejection_fraction + if_else(creatinine >= 2, 1,0)
   ) |>
-    select(acef)
+    dplyr::select(acef)
 }

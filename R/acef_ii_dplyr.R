@@ -32,6 +32,6 @@ acef_ii = function(data, ...) {
     acef_ii = age/ejection_fraction + 2*if_else(creatinine >= 2, 1,0) + 3*if_else(emergency_operation, 1, 0) + 0.2*if_else(hct >= 36, 0, abs(hct - 36))
   ) |>
     mutate(acef_ii = round(acef_ii, 3)) |>
-    select(acef_ii)
+    dplyr::select(acef_ii)
 }
 
