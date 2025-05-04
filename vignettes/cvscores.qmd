@@ -1,0 +1,32 @@
+---
+title: "Cavdiovascular Scores"
+vignette: >
+  %\VignetteIndexEntry{Cavdiovascular Scores}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(cvscores)
+```
+
+The `cvscores` package provides a collection of cardiovascular risk scores that can be used to estimate the risk of cardiovascular events in patients. These scores are based on various clinical and demographic factors, and they can help healthcare providers make informed decisions about patient care. First score is ACEF score, which is a simple and effective tool for assessing the risk of cardiovascular events in patients with coronary artery disease (CAD). The ACEF score is calculated using the following formula:
+
+$$
+ACEF = A/EF + 2*C
+$$ {#eq-acef}
+
+where `A` is age of the patients in years, `EF`is the patients ejection fraction in % units, `C` is patients reatinin if superiore to 2 mg/dL. Second edition from the same authors Ranucci et al.
+
+ACEF II = Age/EF + 2.0 (if serum creatinine \> 2.0 mg/dL) + 3.0 (if emergency surgery) + 0.2 HCT points below 36%
+
+$$
+ACEF II = A/EF + 2*C + 3*E + 0.2*H
+$$ {#eq-acef-ii}
+
+where `A` is age of the patients in years, `EF`is the patients ejection fraction in % units, `C` is patients creatinin if superiore to 2 mg/dL, `E` is if emergency surgery and `H` is hematocrit. The ACEF II score is a more comprehensive version of the original ACEF score, as it takes into account additional factors that can affect the risk of cardiovascular events.
