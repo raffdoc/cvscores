@@ -28,10 +28,10 @@ acef_ii = function(data, ...) {
   if (!all(sapply(data$hct, is.numeric)) || any(data$hct < 0)) {
     stop("HCT must be a non-negative numeric value.")
   }
-  data |> mutate(
-    acef_ii = age/ejection_fraction + 2*if_else(creatinine >= 2, 1,0) + 3*if_else(emergency_operation, 1, 0) + 0.2*if_else(hct >= 36, 0, abs(hct - 36))
+  data |> dplyr::mutate(
+    acef_ii = age/ejection_fraction + 2*dplyr::if_else(creatinine >= 2, 1,0) + 3*dplyr::if_else(emergency_operation, 1, 0) + 0.2*dplyr::if_else(hct >= 36, 0, abs(hct - 36))
   ) |>
-    mutate(acef_ii = round(acef_ii, 3)) |>
+    dplyr::mutate(acef_ii = round(acef_ii, 3)) |>
     dplyr::select(acef_ii)
 }
 

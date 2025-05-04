@@ -22,8 +22,8 @@ acef = function(data, ...) {
   if (!all(sapply(data$ejection_fraction, is.numeric)) || any(data$ejection_fraction < 0) || any(data$ejection_fraction > 100)) {
     stop("Ejection fraction must be a numeric value between 0 and 100.")
   }
-  data |> mutate(
-    acef = age/ejection_fraction + if_else(creatinine >= 2, 1,0)
+  data |> dplyr::mutate(
+    acef = age/ejection_fraction + dplyr::if_else(creatinine >= 2, 1,0)
   ) |>
     dplyr::select(acef)
 }
