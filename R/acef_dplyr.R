@@ -1,9 +1,9 @@
 #' ACEF Score Calculation with dplyr environment
 #' @description This function calculates the ACEF score based on age, creatinine, and ejection fraction using dplyr.
-#' #' @param data A data frame containing the columns: age, creatinine, and ejection_fraction.
-#' #' @param ... Additional arguments passed to dplyr functions.
-#' #' @return A data frame with an additional column for ACEF score.
-#'
+#' @param data A data frame containing the columns: age, creatinine, and ejection_fraction.
+#' @param ... Additional arguments passed to dplyr functions.
+#' @return A data frame with an additional column for ACEF score.
+
 require(dplyr)
 acef = function(data, ...) {
   # Validate inputs

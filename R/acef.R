@@ -5,7 +5,7 @@
 #' @param age Age of the patient in years.
 #' @param creatinine Serum creatinine level in mg/dL.
 #' @param ejection_fraction Ejection fraction percentage.
-#' @returnACEF score in numbers.
+#' @return ACEF score in numbers.
 #' @examples
 #' acef_score(age = 65, creatinine = 1.2, ejection_fraction = 55)
 #' @export
