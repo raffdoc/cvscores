@@ -4,6 +4,7 @@
 #' @name acef_ii_dplyr
 #' @param ... Additional arguments passed to dplyr functions.
 #' @return A data frame with an additional column for ACEF score.
+#' @export acef_ii
 
 require(dplyr)
 acef_ii = function(data, ...) {
