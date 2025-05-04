@@ -13,7 +13,7 @@ Description: This must be able to calculate given data to calculare cardiovascul
 License: MIT
 Encoding: UTF-8
 LazyData: true
-Imports: dplyr, tidyverse
+Imports: dplyr
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
