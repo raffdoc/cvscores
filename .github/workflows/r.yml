@@ -26,8 +26,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Install Quarto and render
-        uses: pommevilla/quarto-render@main
       - name: Set up R ${{ matrix.r-version }}
         uses: r-lib/actions/setup-r@f57f1301a053485946083d7a45022b278929a78a
         with:
@@ -40,3 +38,17 @@ jobs:
       - name: Check
         run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
         shell: Rscript {0}
+  quarto-render-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "Install Quarto and render"
+        uses: pommevilla/quarto-render@main
+
+      - name: "Deploy to gh-pages"
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
