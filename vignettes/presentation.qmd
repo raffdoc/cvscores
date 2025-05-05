@@ -1,0 +1,25 @@
+---
+title: "Creating ACEF Score"
+format: revealjs
+editor: visual
+---
+
+## ACEF Score
+
+Ranucci et al . have created ![](acef.jpeg)
+
+## Variables
+
+-   Age
+
+-   Creatinine
+
+-   Ejection Fraction
+
+## Formula
+
+$$
+ACEF = A/EF + 2*C (if C > 2 mg/dl)
+$$
+
+## Example
