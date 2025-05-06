@@ -6,9 +6,8 @@
 #' @description
 #' A short description...
 #' This function calculates the creatinine clearance (CCr) using the Cockcroft-Gault formula.
-#' @param age Age in years
-#' @param weight Weight in kg
-#' @param scr Serum creatinine in mg/dL
+#' @param data
+#' @param ... Additional arguments (not used).
 #' @return a data frame with the calculated creatinine clearance (CCr)
 #' @export scr_clear
 
@@ -39,7 +38,7 @@ scr_clear <- function(data, ...){
     stop("female must be a logical value (TRUE or FALSE).")
   }
   data |>
-    mutate( ccr = ((140 - age)*weight)/(72*scr)*if_else(female, 0.85, 1)) |>
+    dplyr::mutate( ccr = ((140 - age)*weight)/(72*scr)*if_else(female, 0.85, 1)) |>
     dplyr::select(ccr) |>
-    mutate(ccr = round(ccr, 0))
+    dplyr::mutate(ccr = round(ccr, 0))
 }

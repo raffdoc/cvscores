@@ -5,7 +5,7 @@
 #' @param ... Additional arguments (not used).
 #' @return A data frame with the calculated EuroSCORE II risk score.
 #' @export es_ii
-source(scr_clear.R)
+
 es_ii <- function(data, ...){
   if (!is.data.frame(data)) {
     stop("Input must be a data frame.")
