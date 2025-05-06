@@ -17,12 +17,12 @@ acef_score <- function(age, creatinine, ejection_fraction) {
   if (!is.numeric(creatinine) || creatinine < 0) {
     stop("Creatinine must be a non-negative numeric value.")
   }
-  if (!is.numeric(ejection_fraction) || ejection_fraction < 0 || ejection_fraction > 100) {
+  if (!is.numeric(ejection_fraction) || ejection_fraction < 15 || ejection_fraction > 85) {
     stop("Ejection fraction must be a numeric value between 0 and 100.")
   }
 
   # Calculate ACEF score
-  acef_score <- age/ejection_fraction + 1*ifelse(creatinine>= 2,1, 0)
+  acef_score <- age/ejection_fraction + 2*ifelse(creatinine>= 2,1,0)
 
 
 

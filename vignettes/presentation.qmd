@@ -22,4 +22,28 @@ $$
 ACEF = A/EF + 2*C (if C > 2 mg/dl)
 $$
 
-## Example
+## Packaage structure
+
+-   DESCRIPTION
+-   /R
+-   /tests
+-   /man
+-   /vignettes
+-   /data
+-   /NAMESPACE
+
+## DESCRIPTION
+
+-   Package: name
+-   Type: Package
+-   Title: This package calculates ACEF score
+-   Version: 0.1.0
+-   Authors\@R: c( person( "Rafik", "Margaryan", email = "raffdoc\@gmail.com", role = c("aut", "cre") ) )
+-   Description: This must be able to calculate given data.
+
+## Description
+
+-   License: MIT
+-   Encoding: UTF-8
+-   Imports: dplyr
+-   Suggests: knitr, quarto, testthat (\>= 3.0.0)
