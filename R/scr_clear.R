@@ -1,6 +1,6 @@
 #' The Cockcroft and Gault formula (1973)
 #' @description
-#' This function calculates the creatinine clearance (CCr) using the Cockcroft-Gault formula.
+#' This function calculates the creatinine clearance (CCr) using the Cockcroft-Gault formula. If dialysis is TRUE, the CCr is set to 999.
 #' @param data
 #' @param ... Additional arguments (not used).
 #' @return a data frame with the calculated creatinine clearance (CCr)
