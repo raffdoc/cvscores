@@ -43,5 +43,5 @@ test_that("score calculated corectly", {
                                  '2-procedures',
                                  '3-procedures'),
                thoracic_aorta = c(0, 0, 1, 1)))
-    , data.frame(es_ii = c(0.50, 1.97, 72.71, 91.69)))
+    , data.frame(es_ii = c(0.50, 1.97, 72.71, 93.73)))
 })

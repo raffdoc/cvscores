@@ -51,7 +51,7 @@ es_ii <- function(data, ...){
     0.1886564*cpd +
     0.2407818*nm_mob +
     1.118599*redo +
-    dplyr::if_else(renal_dysfunc > 85 & renal_disfun < 200, 0,
+    dplyr::if_else(renal_dysfunc > 85 & renal_dysfunc < 200, 0,
     dplyr::if_else(renal_dysfunc >50,0.303553,
     dplyr::if_else(renal_dysfunc <50, 0.8592256, 0.6421508))) +
     0.6194522*active_endo +

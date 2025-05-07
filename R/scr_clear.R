@@ -1,10 +1,5 @@
 #' The Cockcroft and Gault formula (1973)
-#' Abbreviations/ Units CCr (creatinine clearance) = mL/minute, Age = years
-#' Weight = kg, SCr (serum creatinine) = mg/dL
-#' CCr={((140–age) x weight)/(72xSCr)}x 0.85 (if female)
-#' @title Calculate creatinine clearance using the Cockcroft-Gault formula
 #' @description
-#' A short description...
 #' This function calculates the creatinine clearance (CCr) using the Cockcroft-Gault formula.
 #' @param data
 #' @param ... Additional arguments (not used).
@@ -17,7 +12,7 @@ scr_clear <- function(data, ...){
     stop("Input data must be a data frame.")
   }
   # Check if the required columns are present in the data frame
-  if (!all(c("age", "weight", "scr", "female") %in% names(data))) {
+  if (!all(c("age", "weight", "scr", "female", "dialysis") %in% names(data))) {
     stop("Data frame must contain columns: age, weight, serum creatinine, and if female")
   }
   # Check if the columns are numeric
@@ -37,8 +32,11 @@ scr_clear <- function(data, ...){
   if (!all(sapply(data$female, is.logical))) {
     stop("female must be a logical value (TRUE or FALSE).")
   }
+  if (!all(sapply(data$dialysis, is.logical))) {
+    stop("female must be a logical value (TRUE or FALSE).")
+  }
   data |>
-    dplyr::mutate( ccr = ((140 - age)*weight)/(72*scr)*if_else(female, 0.85, 1)) |>
+    dplyr::mutate(ccr = if_else(dialysis, 999, ((140 - age)*weight)/(72*scr)*dplyr::if_else(female, 0.85, 1))) |>
     dplyr::select(ccr) |>
     dplyr::mutate(ccr = round(ccr, 0))
 }
